@@ -1,0 +1,26 @@
+# ==========================================
+# Air Keyboard - Python Dependencies
+# ==========================================
+
+# === Core Recognition ===
+mediapipe>=0.10.0,<0.10.15      # Google hand/face landmark recognition (上限锁定：0.10.15+ 移除了 solutions API)
+opencv-python>=4.8.0,<4.10.0    # Camera capture + image preprocessing
+numpy>=1.24.0,<2.0.0            # Landmark coordinate computation + image array ops
+
+# === UI Framework ===
+PySide6>=6.5.0,<6.8.0           # Qt for Python (floating panel / light effect / privacy preview)
+
+# === Keyboard Injection ===
+pynput>=1.7.6,<2.0.0            # Cross-platform keyboard event injection (SendInput on Windows)
+
+# === System Interaction ===
+pywin32>=306                    # win32gui foreground window detection (AI software detection)
+psutil>=5.9.0                   # Process info retrieval (AI software process name matching)
+uiautomation>=2.0.0             # Windows UIAutomation (auto-approval UI monitoring)
+
+# === Configuration ===
+PyYAML>=6.0,<7.0                # YAML config file read/write
+
+# === Testing (dev dependency) ===
+pytest>=7.0.0                   # Unit test framework
+pytest-cov>=4.0.0               # Test coverage

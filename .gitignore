@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+.venv312/
+.venv_run/
+
+# Cache
+.pytest_cache/
+.cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Runtime data
+*.db
+*.sqlite3
+
+# WorkBuddy
+.workbuddy/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Logs (runtime generated)
+*.log
+
+# User config (runtime generated)
+# These are in %APPDATA%, not in repo
+
+# Shortcut
+*.lnk

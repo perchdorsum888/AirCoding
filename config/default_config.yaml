@@ -1,0 +1,181 @@
+# ==========================================
+# AirCoding - 默认配置文件
+# ==========================================
+# 此文件为出厂默认配置，用户配置存储在 %APPDATA%/AirCoding/user_config.yaml
+# 用户配置覆盖默认配置中的同名键。
+
+# === 识别参数 ===
+recognition:
+  fps: 10                          # 采集帧率（10fps平衡性能与延迟）
+  single_hand_mode: true           # 单手识别优先（仅识别先检测到的手）
+  camera_index: 0                  # 摄像头设备索引
+  resolution:
+    width: 640                     # 采集分辨率宽度
+    height: 480                    # 采集分辨率高度
+  thresholds:
+    finger_extended: 0.5           # 手指伸直判定阈值（指尖-掌心距离归一化）
+    finger_curled: 0.3             # 手指弯曲判定阈值
+    thumb_direction: 0.15          # 拇指朝向判定阈值
+    hand_face_distance: 0.10       # 打电话手脸距离阈值（归一化坐标）
+    palm_face_distance_min: 0.15   # 打电话手掌-面部最小距离
+    palm_face_distance_max: 0.40   # 打电话手掌-面部最大距离
+    confidence: 0.7                # 手势识别最低置信度
+
+# === 防误触参数 ===
+validation:
+  confirm_frames: 3                # 连续确认帧数（3帧≈300ms@10fps）
+  hold_durations:                  # 保持时间（毫秒）
+    phone_call: 300
+    pinch: 1500
+  cooldown_ms: 500                 # 冷却时间（毫秒）
+  confidence_threshold: 0.85      # 置信度门控阈值（高阈值防误触发）
+
+# === 手势映射表（5种映射，不区分左右手）===
+gesture_mappings:
+  - gesture: ok
+    hand_side: right
+    action_name: "Enter"
+    key_sequence: ["enter"]
+    emoji: "👌"
+    confirm_frames: 3
+    hold_duration_ms: 0
+    cooldown_ms: 500
+    confidence_threshold: 0.85
+    action_color: "#34C759"
+
+  - gesture: open_palm
+    hand_side: right
+    action_name: "Escape"
+    key_sequence: ["escape"]
+    emoji: "✋"
+    confirm_frames: 3
+    hold_duration_ms: 0
+    cooldown_ms: 500
+    confidence_threshold: 0.85
+    action_color: "#5AC8FA"
+
+  - gesture: scissor
+    hand_side: right
+    action_name: "撤销 Ctrl+Z"
+    key_sequence: ["ctrl", "z"]
+    emoji: "✌️"
+    confirm_frames: 3
+    hold_duration_ms: 0
+    cooldown_ms: 500
+    confidence_threshold: 0.85
+    action_color: "#FF9500"
+
+  - gesture: phone_call
+    hand_side: right
+    action_name: "语音输入激活"
+    key_sequence: []
+    emoji: "🤙"
+    confirm_frames: 3
+    hold_duration_ms: 500
+    cooldown_ms: 500
+    confidence_threshold: 0.85
+    action_color: "#FF2D55"
+
+  - gesture: pinch
+    hand_side: right
+    action_name: "模式切换"
+    key_sequence: []
+    emoji: "🤏"
+    confirm_frames: 3
+    hold_duration_ms: 1500
+    cooldown_ms: 1000
+    confidence_threshold: 0.85
+    action_color: "#AF52DE"
+
+# === 灯效配置 ===
+light_effects:
+  standby:
+    color: "#4A90D9"
+    animation: breathe
+    period_ms: 3000
+    duration_ms: 0
+  recognizing:
+    color: "#00E5FF"
+    animation: pulse
+    period_ms: 800
+    duration_ms: 0
+  recording:
+    color: "#FF2D55"
+    animation: wave
+    period_ms: 600
+    duration_ms: 0
+  triggered:
+    color: "#FFFFFF"
+    animation: flash
+    period_ms: 0
+    duration_ms: 600
+  error:
+    color: "#FF3B30"
+    animation: flicker
+    period_ms: 0
+    duration_ms: 1200
+  auto_approve:
+    color: "#34C759"
+    animation: steady_pulse
+    period_ms: 4000
+    duration_ms: 0
+  manual_confirm:
+    color: "#FF9500"
+    animation: steady_pulse
+    period_ms: 4000
+    duration_ms: 0
+
+# === AI软件注册表 ===
+ai_software:
+  workbuddy:
+    display_name: "WorkBuddy"
+    process_names: ["workbuddy", "WorkBuddy"]
+    voice_input_hotkey: ["ctrl", "d"]
+    window_title_keywords: ["WorkBuddy"]
+    category: "ai"
+  doubao:
+    display_name: "豆包"
+    process_names: ["Doubao", "doubao", "Doubao.exe"]
+    voice_input_hotkey: ["alt", "d"]
+    window_title_keywords: ["豆包", "Doubao"]
+    category: "ai"
+  feishu:
+    display_name: "飞书"
+    process_names: ["Feishu", "Feishu.exe", "Lark", "Lark.exe"]
+    voice_input_hotkey: []
+    window_title_keywords: ["飞书", "Lark", "Feishu"]
+    category: "im"
+  wechat:
+    display_name: "微信"
+    process_names: ["WeChat", "WeChat.exe"]
+    voice_input_hotkey: []
+    window_title_keywords: ["微信", "WeChat"]
+    category: "im"
+  wxwork:
+    display_name: "企业微信"
+    process_names: ["WXWork", "WXWork.exe"]
+    voice_input_hotkey: []
+    window_title_keywords: ["企业微信", "WXWork"]
+    category: "im"
+
+# === UI配置 ===
+ui:
+  language: "en"                    # UI language: en (English, default) / zh (简体中文)
+  panel_position: "bottom_right"    # 面板位置：top_left/top_right/bottom_left/bottom_right/center
+  panel_opacity: 0.85               # 面板透明度（0.0~1.0）
+  panel_size: "medium"              # 面板尺寸：small/medium/large
+  light_effect_enabled: true        # 灯效开关
+  auto_hide_timeout_ms: 300000      # 自动隐藏超时（5分钟，0=不隐藏）
+  sound_feedback_enabled: false     # 声音反馈开关（默认关闭）
+  follow_foreground_monitor: true   # 跟随前台AI软件所在显示器
+  mirror_preview: true              # 预览镜像（摄像头画面镜像，符合用户直觉）
+
+# === 引导 ===
+onboarding:
+  completed: false                  # 是否已完成新手引导
+
+# === 校准 ===
+calibration:
+  samples_per_gesture: 30           # 每种手势采集样本数
+  auto_save: true                   # 校准完成后自动保存
+  profile_name: "default"           # 校准配置名称
